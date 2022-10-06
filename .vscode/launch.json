@@ -1,9 +1,15 @@
 {
-    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
-    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
-    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/src/games/even.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
         {
             "type": "node",
             "request": "launch",
@@ -12,6 +18,12 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/bin/brain-games.js"
+        },
+        {
+            "type": "node",
+            "name": "Run Current File",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/games/even.js"
         }
     ]
 }
