@@ -1,2 +1,2 @@
-import {calcGame} from '../src/games/calc.js';
+import calcGame from '../src/games/calc.js';
 calcGame();

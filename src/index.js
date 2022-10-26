@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
-import { calcGame, gameRule, userAnswer, correctAnswer} from '../src/games/calc.js';
-import { calcGame, gameRule, userAnswer, correctAnswer} from '../src/games/even.js';
+import gameRule from '../src/games/calc.js';
+//import { evenGame, gameRule, userAnswer, correctAnswer } from '../src/games/even.js';
 
-export const brainGames = (gameRule, gameQuestion, userAnswer, correctAnswer) => {
+const brainGames = (gameRule, foo) => {
     // 1. приветствие 
     console.log('Welcome to the Brain Games!');
     const userName = readlineSync.question('May I have your name? ');
@@ -12,10 +12,11 @@ export const brainGames = (gameRule, gameQuestion, userAnswer, correctAnswer) =>
     console.log(gameRule);
 
     for (let i = 0; i < 3; i += 1) {
+    const [question, correctAnswer] = foo();
     // 3. вопрос
-    console.log(gameQuestion);
+    console.log(question);
     // 4. ответ пользователя
-    console.log(userAnswer);
+    const userAnswer = readlineSync.question("Your answer: ");
     // 5. проверка ответа пользователя и вывод сообщения о результате проверки
     if (userAnswer === correctAnswer) {
         console.log("Correct!");
@@ -29,3 +30,5 @@ export const brainGames = (gameRule, gameQuestion, userAnswer, correctAnswer) =>
     // 6. поздравление
     console.log(`Congratulations, ${userName}!`);
 };
+
+export default brainGames;

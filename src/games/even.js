@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import {brainGames} from '../src/games/index.js';
+import { gameQuestion } from './calc.js';
 
 const getRandomInt = (max) => {
     return Math.floor(Math.random() * max);
@@ -25,6 +26,7 @@ export const evenGame = (number) => {
     }
     }
     // было поздравление
+    return gameQuestion;
 };
 
 export { evenGame, gameRule, gameQuestion, userAnswer, correctAnswer };
