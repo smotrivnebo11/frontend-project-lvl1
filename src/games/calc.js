@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import {brainGames} from '../src/games/index.js';
 
 const getRandomInt = (max) => {
     return Math.floor(Math.random() * max);
@@ -30,34 +31,26 @@ const calculate = (number1, number2, operation) => {
     };
 
 
-export const calcGame = () => {
-    console.log('Welcome to the Brain Games!');
-    const userName = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${userName}!`);
+const calcGame = () => {
+    // было приветствие 
 
-    console.log("What is the result of the expression?");
+   const gameRule = "What is the result of the expression?";
 
-    for (let i = 0; i < 3; i += 1) {
-        const number1 = getRandomInt(50);
-        const number2 = getRandomInt(50);
-        const operation = getRandomOperation(operations);
-        const expressionResult = calculate(number1, number2, operation);
+    // был цикл
+    const number1 = getRandomInt(50);
+    const number2 = getRandomInt(50);
+    const operation = getRandomOperation(operations);
+    const expressionResult = calculate(number1, number2, operation);
+    const correctAnswer = expressionResult.toString();
 
-        console.log("Question: ", number1, operation, number2);
-        const userAnswer = readlineSync.question("Your answer: ");
+    const gameQuestion = `Question: ${number1} ${operation} ${number2}`;
+    const userAnswer = readlineSync.question("Your answer: ");
 
-        console.log(typeof number1);
-        console.log(typeof number2);
-        console.log(typeof expressionResult);
-        console.log(typeof userAnswer);
-
-        if (userAnswer === expressionResult.toString()) {
-            console.log("Correct!");
-        } else {
-            const errorMessage = `'${userAnswer}' is wrong answer ;(. Correct answer was '${expressionResult}'.\nLet's try again, ${userName}!`;
-            console.log(errorMessage);
-            return errorMessage;
-        }
-    }
-    console.log(`Congratulations, ${userName}!`);
+    // была проверка ответа пользователя и вывод сообщения о результате проверки
+    // было поздравление
+    brainGames();
 };
+
+
+
+export { calcGame, gameRule, gameQuestion, userAnswer, correctAnswer };
