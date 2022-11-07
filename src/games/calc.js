@@ -1,9 +1,8 @@
-import readlineSync from 'readline-sync';
 import brainGames from '../index.js';
 
 const getRandomInt = (max) => {
     return Math.floor(Math.random() * max);
-  };
+};
 
 const operations = ["+", "-", "*"];
 
@@ -30,12 +29,10 @@ const calculate = (number1, number2, operation) => {
     return result;
     };
 
-    const gameRule = "What is the result of the expression?";
+const gameRule = "What is the result of the expression?";
 
 const calcGame = () => {
-    // было приветствие 
-
-    // был цикл
+  
     const number1 = getRandomInt(50);
     const number2 = getRandomInt(50);
     const operation = getRandomOperation(operations);
@@ -44,12 +41,9 @@ const calcGame = () => {
 
     const gameQuestion = `Question: ${number1} ${operation} ${number2}`;
 
-    // была проверка ответа пользователя и вывод сообщения о результате проверки
-    // было поздравление
-
     return [gameQuestion, correctAnswer];
 };
 
 export default () => {
     brainGames(gameRule, calcGame);
-}
+};

@@ -1,32 +1,26 @@
-import readlineSync from 'readline-sync';
-import {brainGames} from '../src/games/index.js';
-import { gameQuestion } from './calc.js';
+import brainGames from '../index.js';
 
 const getRandomInt = (max) => {
     return Math.floor(Math.random() * max);
   };
 
-export const evenGame = (number) => {
+const gameRule = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
 
-    // было приветствие 
+const evenGame = () => {
 
-    gameRule = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
-
-    for (let i = 0; i < 3; i += 1) {
     const number = getRandomInt(100);
     const gameQuestion = `Question: ${number}`;
-    const userAnswer = readlineSync.question("Your answer: ");
-    const correctAnswer = 0;
+    let correctAnswer = '';
+   
+   if (number % 2 === 0) {
+    correctAnswer = 'yes';
+   } else {
+    correctAnswer = 'no';
+   }
 
-    if (number % 2 === 0 && userAnswer === "yes" || number % 2 !== 0 && userAnswer === "no") {
-        correctAnswer = number;
-    } else {
-        const opposite = (userAnswer === 'yes' ? 'no' : 'yes');
-        correctAnswer = opposite;
-    }
-    }
-    // было поздравление
-    return gameQuestion;
+    return [gameQuestion, correctAnswer];
 };
 
-export { evenGame, gameRule, gameQuestion, userAnswer, correctAnswer };
+export default () => {
+    brainGames(gameRule, evenGame);
+};
