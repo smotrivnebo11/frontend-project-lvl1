@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+const countRounds = 3;
+
 const brainGames = (gameRule, game) => {
     // 1. приветствие 
     console.log('Welcome to the Brain Games!');
@@ -9,7 +11,7 @@ const brainGames = (gameRule, game) => {
     // 2. правило игры
     console.log(gameRule);
 
-    for (let i = 0; i < 3; i += 1) {
+    for (let i = 0; i < countRounds; i += 1) {
     const [question, correctAnswer] = game();
     // 3. вопрос
     console.log(question);

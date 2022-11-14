@@ -1,8 +1,7 @@
 import brainGames from '../index.js';
+import getRandomInteger from '../utils';
 
-const getRandomInt = (max) => {
-    return Math.floor(Math.random() * max);
-};
+const description = "What is the result of the expression?";
 
 const operations = ["+", "-", "*"];
 
@@ -29,12 +28,10 @@ const calculate = (number1, number2, operation) => {
     return result;
     };
 
-const gameRule = "What is the result of the expression?";
-
 const calcGame = () => {
   
-    const number1 = getRandomInt(50);
-    const number2 = getRandomInt(50);
+    const number1 = getRandomInteger(50);
+    const number2 = getRandomInteger(50);
     const operation = getRandomOperation(operations);
     const expressionResult = calculate(number1, number2, operation);
     const correctAnswer = expressionResult.toString();
@@ -45,5 +42,5 @@ const calcGame = () => {
 };
 
 export default () => {
-    brainGames(gameRule, calcGame);
+    brainGames(description, calcGame);
 };

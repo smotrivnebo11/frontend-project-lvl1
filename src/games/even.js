@@ -1,18 +1,22 @@
 import brainGames from '../index.js';
+import getRandomInteger from '../utils';
 
-const getRandomInt = (max) => {
-    return Math.floor(Math.random() * max);
-  };
+const description = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
 
-const gameRule = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
+const isEven = (number) => {
+    if (number % 2 === 0) {
+        return true;
+    }
+    return false;
+}
 
 const evenGame = () => {
 
-    const number = getRandomInt(100);
+    const number = getRandomInteger(100);
     const gameQuestion = `Question: ${number}`;
     let correctAnswer = '';
    
-   if (number % 2 === 0) {
+   if (isEven(number) === true) {
     correctAnswer = 'yes';
    } else {
     correctAnswer = 'no';
@@ -22,5 +26,5 @@ const evenGame = () => {
 };
 
 export default () => {
-    brainGames(gameRule, evenGame);
+    brainGames(description, evenGame);
 };

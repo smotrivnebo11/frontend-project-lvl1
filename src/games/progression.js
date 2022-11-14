@@ -1,8 +1,7 @@
 import brainGames from '../index.js';
+import getRandomInteger from '../utils';
 
-const getRandomInteger = (min, max) => {
-    return Math.floor(min + Math.random() * (max + 1 - min));
-};
+const description = "What number is missing in the progression?";
   
 const createProgression = (start, step) => {
     const progression = [];
@@ -13,8 +12,6 @@ const createProgression = (start, step) => {
   
     return progression;
 };
-  
-const gameRule = "What number is missing in the progression?";
 
 const progressionGame = () => {
     const start = getRandomInteger(1, 10);
@@ -30,5 +27,5 @@ const progressionGame = () => {
 };
 
 export default () => {
-    brainGames(gameRule, progressionGame);
+    brainGames(description, progressionGame);
 };
