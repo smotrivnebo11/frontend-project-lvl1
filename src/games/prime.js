@@ -1,5 +1,5 @@
 import brainGames from '../index.js';
-import getRandomInteger from '../utils';
+import getRandomInteger from '../utils.js';
 
 const description = 'Answer \"yes\" if given number is prime. Otherwise answer \"no\".';
 
@@ -14,9 +14,10 @@ const isPrime = (number) => {
     }
     i += 1;
   }
+  return prime;
 }
   
-const primeGame = () => {
+const getAnswerAndQuestion = () => {
   const number = getRandomInteger(1, 20);
   const gameQuestion = `Question: ${number}`;
 
@@ -31,5 +32,5 @@ const primeGame = () => {
   };
   
 export default () => {
-  brainGames(description, primeGame);
+  brainGames(description, getAnswerAndQuestion);
 };

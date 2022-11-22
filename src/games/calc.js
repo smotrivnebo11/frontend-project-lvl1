@@ -1,5 +1,5 @@
 import brainGames from '../index.js';
-import getRandomInteger from '../utils';
+import getRandomInteger from '../utils.js';
 
 const description = "What is the result of the expression?";
 
@@ -28,10 +28,10 @@ const calculate = (number1, number2, operation) => {
     return result;
     };
 
-const calcGame = () => {
+const getAnswerAndQuestion = () => {
   
-    const number1 = getRandomInteger(50);
-    const number2 = getRandomInteger(50);
+    const number1 = getRandomInteger(1, 50);
+    const number2 = getRandomInteger(1, 50);
     const operation = getRandomOperation(operations);
     const expressionResult = calculate(number1, number2, operation);
     const correctAnswer = expressionResult.toString();
@@ -42,5 +42,5 @@ const calcGame = () => {
 };
 
 export default () => {
-    brainGames(description, calcGame);
+    brainGames(description, getAnswerAndQuestion);
 };

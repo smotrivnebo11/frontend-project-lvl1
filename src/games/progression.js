@@ -1,5 +1,5 @@
 import brainGames from '../index.js';
-import getRandomInteger from '../utils';
+import getRandomInteger from '../utils.js';
 
 const description = "What number is missing in the progression?";
   
@@ -13,7 +13,7 @@ const createProgression = (start, step) => {
     return progression;
 };
 
-const progressionGame = () => {
+const getAnswerAndQuestion = () => {
     const start = getRandomInteger(1, 10);
     const step = getRandomInteger(1, 5);
     const progression = createProgression(start, step);
@@ -27,5 +27,5 @@ const progressionGame = () => {
 };
 
 export default () => {
-    brainGames(description, progressionGame);
+    brainGames(description, getAnswerAndQuestion);
 };
