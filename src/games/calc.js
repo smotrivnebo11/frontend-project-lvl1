@@ -2,11 +2,12 @@ import brainGames from '../index.js';
 
 import getRandomInteger from '../utils.js';
 
+
 const description = 'What is the result of the expression?';
 
 const operations = ['+', '-', '*'];
 
-const getRandomOperation = (arr) => arr[Math.floor(Math.random()*arr.length)];
+const getRandomOperation = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 const calculate = (number1, number2, operation) => {
   let result = 0;
@@ -23,8 +24,8 @@ const calculate = (number1, number2, operation) => {
       break;
     default:
       result = null;
-    }
-    return result;
+  }
+  return result;
 };
 
 const getAnswerAndQuestion = () => {

@@ -2,32 +2,33 @@ import readlineSync from 'readline-sync';
 
 const countRounds = 3;
 
-const brainGames = (gameRule, game) => {
+  brainGames(description, getAnswerAndQuestion);
+  const brainGames = (description, ) => {
   // 1. приветствие
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
   // 2. правило игры
-  console.log(gameRule);
+  console.log(description);
 
   for (let i = 0; i < countRounds; i += 1) {
-  const [question, correctAnswer] = game();
+    const [question, correctAnswer] = game();
 
   // 3. вопрос
-  console.log(question);
+    console.log(question);
 
   // 4. ответ пользователя
-  const userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
 
   // 5. проверка ответа пользователя и вывод сообщения о результате проверки
-  if (userAnswer === correctAnswer) {
-    console.log("Correct!");
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
     } else {
-      const errorMessage = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
-      console.log(errorMessage);
-      return errorMessage;
-    }
+        const errorMessage = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
+        console.log(errorMessage);
+        return errorMessage;
+      }
   }
 
   // 6. поздравление
@@ -35,4 +36,3 @@ const brainGames = (gameRule, game) => {
 };
 
 export default brainGames;
-  
