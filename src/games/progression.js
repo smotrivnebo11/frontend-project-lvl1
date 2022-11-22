@@ -20,8 +20,9 @@ const getAnswerAndQuestion = () => {
     const randomIndex = getRandomInteger(0, progression.length - 1);
 
     const correctAnswer = String(progression[randomIndex]);
-    const interruptedProgr = progression.splice(randomIndex, 1, '..');
-    const gameQuestion = progression;
+    progression[randomIndex] = '..';
+    //const interruptedProgr = progression.splice(randomIndex, 1, '..');
+    const gameQuestion = `Question: ${progression.join(' ')}`;
     
     return [gameQuestion, correctAnswer];
 };
