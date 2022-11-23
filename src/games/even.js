@@ -3,7 +3,7 @@ import brainGames from '../index.js';
 import getRandomInteger from '../utils.js';
 
 
-const description = 'Answer /"yes/" if the number is even, otherwise answer /"no/".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (number) => {
   if (number % 2 === 0) {
@@ -13,11 +13,10 @@ const isEven = (number) => {
 };
 
 const getAnswerAndQuestion = () => {
-  const number = getRandomInteger(1, 100);
-  const gameQuestion = `Question: ${number}`;
+  const gameQuestion = getRandomInteger(1, 100);
   let correctAnswer = '';
 
-  if (isEven(number) === true) {
+  if (isEven(gameQuestion) === true) {
     correctAnswer = 'yes';
   } else {
     correctAnswer = 'no';

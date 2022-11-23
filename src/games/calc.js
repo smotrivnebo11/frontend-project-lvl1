@@ -35,7 +35,7 @@ const getAnswerAndQuestion = () => {
   const expressionResult = calculate(number1, number2, operation);
   const correctAnswer = expressionResult.toString();
 
-  const gameQuestion = `Question: ${number1} ${operation} ${number2}`;
+  const gameQuestion = `${number1} ${operation} ${number2}`;
 
   return [gameQuestion, correctAnswer];
 };

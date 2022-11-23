@@ -12,10 +12,10 @@ const countRounds = 3;
   console.log(description);
 
   for (let i = 0; i < countRounds; i += 1) {
-    const [question, correctAnswer] = game();
+    const [question, correctAnswer] = getAnswerAndQuestion();
 
   // 3. вопрос
-    console.log(question);
+    console.log(`Question: ${question}`);
 
   // 4. ответ пользователя
     const userAnswer = readlineSync.question('Your answer: ');
@@ -31,7 +31,7 @@ const countRounds = 3;
   }
 
   // 6. поздравление
-  console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 export default brainGames;

@@ -16,7 +16,7 @@ const getAnswerAndQuestion = () => {
   const number2 = getRandomInteger(1, 50);
   const correctAnswer = getDevisor(number1, number2).toString();
 
-  const gameQuestion = `Question: ${number1} ${number2}`;
+  const gameQuestion = `${number1} ${number2}`;
   return [gameQuestion, correctAnswer];
 };
 

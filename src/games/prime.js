@@ -3,7 +3,7 @@ import brainGames from '../index.js';
 import getRandomInteger from '../utils.js';
 
 
-const description = 'Answer /"yes/" if given number is prime. Otherwise answer /"no/".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
   let prime = true;
@@ -20,12 +20,11 @@ const isPrime = (number) => {
 };
 
 const getAnswerAndQuestion = () => {
-  const number = getRandomInteger(1, 20);
-  const gameQuestion = `Question: ${number}`;
+  const gameQuestion = getRandomInteger(1, 20);;
 
   let correctAnswer = '';
 
-  if (isPrime(number) === true) {
+  if (isPrime(gameQuestion) === true) {
     correctAnswer = 'yes';
   } else {
     correctAnswer = 'no';
