@@ -1,7 +1,5 @@
 import brainGames from '../index.js';
-
 import getRandomInteger from '../utils.js';
-
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -20,7 +18,7 @@ const isPrime = (number) => {
 };
 
 const getAnswerAndQuestion = () => {
-  const gameQuestion = getRandomInteger(1, 20);;
+  const gameQuestion = getRandomInteger(1, 20);
 
   let correctAnswer = '';
 
