@@ -4,6 +4,7 @@ import getRandomInteger from '../utils.js';
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
+  if (number < 1) return false;
   let prime = true;
 
   let i = 2;
@@ -18,7 +19,7 @@ const isPrime = (number) => {
 };
 
 const getAnswerAndQuestion = () => {
-  const gameQuestion = getRandomInteger(2, 20);
+  const gameQuestion = getRandomInteger(-5, 20);
 
   let correctAnswer = '';
 
