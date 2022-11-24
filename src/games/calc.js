@@ -1,4 +1,5 @@
 import brainGames from '../index.js';
+
 import getRandomInteger from '../utils.js';
 
 const description = 'What is the result of the expression?';
