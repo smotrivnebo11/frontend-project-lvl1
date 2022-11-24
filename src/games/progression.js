@@ -1,5 +1,4 @@
 import brainGames from '../index.js';
-
 import getRandomInteger from '../utils.js';
 
 const description = 'What number is missing in the progression?';

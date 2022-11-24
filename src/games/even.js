@@ -1,5 +1,4 @@
 import brainGames from '../index.js';
-
 import getRandomInteger from '../utils.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
