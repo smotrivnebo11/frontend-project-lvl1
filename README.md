@@ -1,6 +1,8 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/smotrivnebo11/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/smotrivnebo11/frontend-project-lvl1/actions)
 
+<a href="https://codeclimate.com/github/smotrivnebo11/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/809b776e6f90918ca9fd/maintainability" /></a>
+
 Brain Games is a set of five games, each game is launched separately by a command from a Makefile. To win one game you need to answer successfully all tree questions. If you print a wrong answer, the game ends, and you can start it over again or launch another game. 
 
 Brain Games requires following system settings:
